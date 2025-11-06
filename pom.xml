@@ -1,33 +1,28 @@
-<project xmlns=http://maven.apache.org/POM/4.0.0
-         xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
- 
-  <!-- Keep these coordinates the same as your project -->
+
   <groupId>ms.kenchen</groupId>
   <artifactId>calculator</artifactId>
   <version>1.0</version>
   <packaging>war</packaging>
   <name>calculator</name>
- 
+
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jersey.version>2.39.1</jersey.version>
   </properties>
- 
+
   <dependencies>
-    <!-- JAX-RS API -->
     <dependency>
       <groupId>javax.ws.rs</groupId>
       <artifactId>javax.ws.rs-api</artifactId>
       <version>2.1.1</version>
       <scope>provided</scope>
     </dependency>
- 
-    <!-- Jersey (implementation) -->
     <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-servlet</artifactId>
@@ -44,11 +39,10 @@
       <version>${jersey.version}</version>
     </dependency>
   </dependencies>
- 
+
   <build>
     <finalName>calculator-1.0</finalName>
     <plugins>
-      <!-- Java 11 compiler -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -59,8 +53,6 @@
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
- 
-      <!-- Modern WAR plugin (fixes the Java 11 incompatibility) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
